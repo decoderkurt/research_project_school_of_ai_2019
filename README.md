@@ -53,13 +53,9 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 ```
 # Result
 ## Train 10x10 image (012.bmp)
-<img src="oneshotgo/data/012.bmp" width=25% align="left" />
-<img src="oneshotgo/data/012.PNG" width=25% align="left" />
-<img src="oneshotgo/data/result/012_10x10_not_trained.PNG" width=25% align="left" />
-<img src="oneshotgo/data/result/012_10x10_trained.PNG" width=25% align="left" />
+<img src="oneshotgo/data/012.bmp" width=25% align="left" /><img src="oneshotgo/data/012.png" width=25% align="left" />
+<img src="oneshotgo/data/result/012_10x10_not_trained.PNG" width=25% align="left" /><img src="oneshotgo/data/result/012_10x10_trained.PNG" width=25% align="left" />
 
 ## Test 100x100 unseed image (065.bmp)
-<img src="oneshotgo/data/065.bmp" width=25% align="left" />
-<img src="oneshotgo/data/065.PNG" width=25% align="left" />
-<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=25% align="left" />
-<img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=25% align="left" />
+<img src="oneshotgo/data/065.bmp" width=25% align="left" /><img src="oneshotgo/data/065.png" width=25% align="left" />
+<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=25% align="left" /><img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=25% align="left" />
