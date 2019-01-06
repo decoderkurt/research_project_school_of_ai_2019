@@ -43,9 +43,8 @@ keras-rl has not yet implemented a PPO. In case of tensorforce, it was unstable 
 ## Install
 ```
 git clone https://github.com/decoderkurt/research_project_school_of_ai_2019.git
-cd research_project_school_of_ai_2019/oneshotgo
+cd research_project_school_of_ai_2019
 pip install -e .
-cd ..
 ```
 ## Train
 ```
