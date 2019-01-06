@@ -1,7 +1,6 @@
-<p align="center">
-<img src="oneshotgo/data/res/logo.png" width=70%/>https://www.theschool.ai/school-of-ai-fellowship/
-</p>
-# About
+[<img src="oneshotgo/data/res/logo.png" width=70%/>](https://www.theschool.ai/school-of-ai-fellowship/)
+
+# Research Project
 
 I tried to solve real world problems with machine learning in this research project. I noted that there is a limit to the traditional Deep Learning application, which is highly dependent on existing datasets because it is very difficult to obtain labled data in the biomedical sector.
 
