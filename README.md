@@ -15,7 +15,7 @@ I defined the human's ability to read images as a policy of reinforcement learni
 
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
 
-# Reward Function
+## Reward Function
 The agent reads the original image and converts it into a two-dimensional array as large as the image size, and performs a back-white calibration by comparing the pixel value with the predicted value. I designed the reward function with the correct rate compared to the actual labled mask. 
 
 In other words, the agent produces a mask every time through repeated actions, which will receive a higher reward if they are similar to the correct answer.
@@ -26,6 +26,28 @@ The key to this return function is using the min max function so that the number
 
 I also considered using MSE and SSIM, but the former was not appropriate due to high variance and the latter was always highly similarity.
 
+## Action
+The intention was to distinguish the background from the cell boundary and the nucleus at the same time with the black, grey and white. To do this, two separate uint8 between 0 and 255 are required for action_space. There is still a problem where Tuple action_space is not implemented yet in PPO of OpenAI, and in the case of Box, a bug with an action value of between -1.0 and 1.0 was found as float, regardless of defined the action space. I eventually used only one discrete integer.
 
-python -m baselines.run --alg=ppo2 --env=OneShotGo-v0
+## action_space, observation_space
+Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such as Arati and seem to be well implemented. It works well  with observation_space, not action_space. Until the fix, it would be better to be careful if you apply PPO of gym in a unique way.
+
+## keras-rl, tensorforce, ray, SLM
+keras-rl has not yet implemented a PPO. In case of tensorforce, it was unstable because it did not fit my development environment. Ray does not yet support for Windows. In the case of SLM, the dependency of the ray makes it not support for Windows. I installed and tested Linux in Windows using WSL, but due to the instability of WSL, the system was failed while apt-get update. OpenAI was my best choice.
+
+# Enviroment
+## Install
+```
+git clone https://github.com/decoderkurt/research_project_school_of_ai_2019.git
+cd oneshotgo
+pip install -e .
+cd ..
+```
+## Train
+```
+python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="YourOwnOneShotGo10M"
+```
+## Test
+```
 python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
+```
