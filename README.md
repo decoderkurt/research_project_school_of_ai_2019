@@ -69,18 +69,13 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 
 <img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=42% />
 
-|---|Before|After|size change|
+# Conclusion
+||Before|After|size changed|
+|---|---|---|---|
 |012|9.05|64.3|X|
 |065|22.3|77.6|X|
 |065|17.9|61.3|O|
 
-After strengthening learning with just one image of 10x10, 
-9.05->64,3
+Using only one image PPO training, I got about three times more effective improvement than if it did not apply. Through this research project, I saw the possibility of solving real world problems using reinforcement learning where traditional deep learning could not be applied due to small data.
 
-When applied to an unused image of the same size 10x10, 
-22.3 -> 77.6
-If applied to an unused image of 100x100 different sizes,
-17.9->61.3
-
-# Conclusion
-
+Also, I can see the reinforcement learning outcomes using PPO worked well even in different size unseen images. I think the strength of reinforcement learning is that it can be applied to more complex and time-consuming data after learning it quickly with a small size data.
