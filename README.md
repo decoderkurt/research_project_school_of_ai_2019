@@ -22,6 +22,9 @@ In other words, the agent produces a mask every time through repeated actions, w
 ```
 reward = ( min(count[0], self.mask_zero_count) / max(count[0], self.mask_zero_count)) ** 2
 ```
+The key to this return function is using the min max function so that the number of zeros is the most important and the correctness, whether large or small, is equally affected. Given the nature of biomedical images, background and object classification are most important, and slide images are mostly colored, so the better the background is blown away, the higher the reward.
+
+I also considered using MSE and SSIM, but the former was not appropriate due to high variance and the latter was always highly similarity.
 
 
 python -m baselines.run --alg=ppo2 --env=OneShotGo-v0
