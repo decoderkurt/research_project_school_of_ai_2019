@@ -15,6 +15,14 @@ I defined the human's ability to read images as a policy of reinforcement learni
 
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
 
+# Reward Function
+The agent reads the original image and converts it into a two-dimensional array as large as the image size, and performs a back-white calibration by comparing the pixel value with the predicted value. I designed the reward function with the correct rate compared to the actual labled mask. 
+
+In other words, the agent produces a mask every time through repeated actions, which will receive a higher reward if they are similar to the correct answer.
+```
+reward = ( min(count[0], self.mask_zero_count) / max(count[0], self.mask_zero_count)) ** 2
+```
+
 
 python -m baselines.run --alg=ppo2 --env=OneShotGo-v0
 python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
