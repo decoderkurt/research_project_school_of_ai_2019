@@ -60,10 +60,10 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 ## Test 10x10 unseed image (065.bmp)
 <img src="oneshotgo/data/065_10x10.bmp" width=30% /><img src="oneshotgo/data/065_10x10.png" width=30%  />
 
-<img src="oneshotgo/data/result/065_10x10_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_10x10_unseen_oneshot.PNG" width=45% />
+<img src="oneshotgo/data/result/065_10x10_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_10x10_unseen_oneshot.PNG" width=42% />
 
 
 ## Test 100x100 unseed image (065.bmp)
 <img src="oneshotgo/data/065_100x100.bmp" width=50% /><img src="oneshotgo/data/065_100x100.png" width=50%  />
 
-<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=45% />
+<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=42% />
