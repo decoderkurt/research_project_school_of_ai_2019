@@ -1,3 +1,6 @@
+<p align="center">
+<img src="oneshotgo/data/res/logo.png" width=70%/>https://www.theschool.ai/school-of-ai-fellowship/
+</p>
 # About
 
 I tried to solve real world problems with machine learning in this research project. I noted that there is a limit to the traditional Deep Learning application, which is highly dependent on existing datasets because it is very difficult to obtain labled data in the biomedical sector.
@@ -10,7 +13,9 @@ In this project, I redefined the one-shot image segmentation problem as a reinfo
 
 
 # Reinforcement learning
-
+<p align="center">
+<img src="oneshotgo/data/res/un.png" width=70%/>
+</p>
 I defined the human's ability to read images as a policy of reinforcement learning, and an agent's prediction of this as an action. I also considered inverse reinforcement learning and GAIL. In this case, the reward function is pretty clear and the policy can be important. I chose PPO that also does not need the MDP(Markov Descion Proecess).
 
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
