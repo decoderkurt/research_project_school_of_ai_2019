@@ -55,13 +55,32 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 ## Train
 ### 10x10 image (012.bmp)
 <img src="oneshotgo/data/012.bmp" width=15% /><img src="oneshotgo/data/012.png" width=15%  />
+
 <img src="oneshotgo/data/result/012_10x10_not_trained.PNG" width=40% /><img src="oneshotgo/data/result/012_10x10_trained.PNG" width=40% />
 
 ## Test
 ### 10x10 unseen image (065.bmp)
 <img src="oneshotgo/data/065_10x10.bmp" width=30% /><img src="oneshotgo/data/065_10x10.png" width=30%  />
+
 <img src="oneshotgo/data/result/065_10x10_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_10x10_unseen_oneshot.PNG" width=42% />
 
 ### 100x100 unseen image (065.bmp)
 <img src="oneshotgo/data/065_100x100.bmp" width=50% /><img src="oneshotgo/data/065_100x100.png" width=50%  />
+
 <img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=42% />
+
+|---|Before|After|size change|
+|012|9.05|64.3|X|
+|065|22.3|77.6|X|
+|065|17.9|61.3|O|
+
+After strengthening learning with just one image of 10x10, 
+9.05->64,3
+
+When applied to an unused image of the same size 10x10, 
+22.3 -> 77.6
+If applied to an unused image of 100x100 different sizes,
+17.9->61.3
+
+# Conclusion
+
