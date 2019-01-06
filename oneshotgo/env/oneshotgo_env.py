@@ -7,6 +7,8 @@ import numpy as np
 from PIL import Image
 #from scipy.misc import imsave
 
+from os.path import abspath, join, dirname
+
 """
 0 - No guess yet submitted (only after reset)
 1 - Guess is lower than the target
@@ -17,10 +19,12 @@ class OneShotGoEnv(gym.Env):
     def __init__(self):
         seed()
         self.seed()
-        self.img = Image.open(r"E:\gym\gym\envs\pap\012.bmp")
+
+        script_dir = dirname(__file__)
+        self.img = Image.open(abspath(join(script_dir, "..", "data", "012.bmp")))
         #self.img = Image.open(r"E:\gym\gym\envs\pap\065.bmp")
         #self.img = Image.open(r"E:\gym\gym\envs\pap\012Ori.bmp")
-        self.mask = np.asarray(Image.open(r"E:\gym\gym\envs\pap\012.png"))
+        self.mask = np.asarray(Image.open(abspath(join(script_dir, "..", "data", "012.png"))))
         #self.mask = np.asarray(Image.open(r"E:\gym\gym\envs\pap\065.png"))
         #self.mask = np.asarray(Image.open(r"E:\gym\gym\envs\pap\012Ori.png"))
         self.mask_zero_count = np.count_nonzero(self.mask[...,0]==0)
