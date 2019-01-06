@@ -39,13 +39,13 @@ keras-rl has not yet implemented a PPO. In case of tensorforce, it was unstable 
 ## Install
 ```
 git clone https://github.com/decoderkurt/research_project_school_of_ai_2019.git
-cd oneshotgo
+cd research_project_school_of_ai_2019/oneshotgo
 pip install -e .
 cd ..
 ```
 ## Train
 ```
-python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="YourOwnOneShotGo10M"
+python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --save_path="YourOwnOneShotGo10M"
 ```
 ## Test
 ```
