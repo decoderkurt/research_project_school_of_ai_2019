@@ -2,6 +2,7 @@
 
 # One shot learning using PPO
 
+## Introduction
 In this research project, to solve real world problems with machine learning, I noted that there is a limit to the traditional Deep Learning application, which is highly dependent on existing datasets because it is still difficult to obtain enough labled data.
 
 The basis for judgment must be clear in the biomedical field, so I decided to use image data among various types for the reason of being visualized intuitively.
@@ -11,7 +12,7 @@ Using just one labeled image data for training, I wanted to categorize a lot of 
 In this project, I redefined the one shot image segmentation problem as a reinforcement learning and solved it using PPO. I found that there was actually a dramatic performance.
 
 
-# Reinforcement learning
+## Reinforcement learning
 <p align="center">
 <img src="oneshotgo/data/res/un.png" width=70%/>
 </p>
@@ -19,7 +20,7 @@ I defined the human's ability to read images as a policy of reinforcement learni
 
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
 
-## Reward Function
+### Reward Function
 The agent reads the original image and converts it into a two-dimensional array as large as the image size, and performs a back-white calibration by comparing the pixel value with the predicted value. I designed the reward function with the correct rate compared to the actual labled mask. 
 
 In other words, the agent produces a mask every time through repeated actions, which will receive a higher reward if they are similar to the correct answer.
@@ -30,33 +31,33 @@ The key to this return function is using the min max function so that the number
 
 I also considered using MSE and SSIM, but the former was not appropriate due to high variance and the latter was always highly similarity.
 
-## Action
+### Action
 The intention was to distinguish the background from the cell boundary and the nucleus at the same time with the black, grey and white. To do this, two separate uint8 between 0 and 255 are required for action_space. There is still a problem where Tuple action_space is not implemented yet in PPO of OpenAI, and in the case of Box, a bug with an action value of between -1.0 and 1.0 was found as float, regardless of defined the action space. I eventually used only one discrete integer.
 
-## action_space, observation_space
+### action_space, observation_space
 Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such as Arati and seem to be well implemented. It works well  with observation_space, not action_space. Until the fix, it would be better to be careful if you apply PPO of gym in a unique way.
 
-## keras-rl, tensorforce, ray, SLM
+### keras-rl, tensorforce, ray, SLM
 keras-rl has not yet implemented a PPO. In case of tensorforce, it was unstable because it did not fit my development environment. Ray does not yet support for Windows. In the case of SLM, the dependency of the ray makes it not support for Windows. I installed and tested Linux in Windows using WSL, but due to the instability of WSL, the system was failed while apt-get update. OpenAI was my best choice.
 
-# Experiment
-## Install
+## Experiment
+### Install
 ```
 git clone https://github.com/decoderkurt/research_project_school_of_ai_2019.git
 cd research_project_school_of_ai_2019
 pip install -e .
 ```
-## Train
+### Train
 ```
 python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --save_path="YourOwnOneShotGo10M"
 ```
-## Test
+### Test
 ```
 python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 ```
-# Result
-## Train
-### 10x10 image (012.bmp)
+## Result
+### Train
+#### 10x10 image (012.bmp)
 
 <img src="oneshotgo/data/012.bmp" width=30% /><img src="oneshotgo/data/012.png" width=30%  />
 
@@ -64,22 +65,22 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 |---|---|
 |<img src="oneshotgo/data/result/012_10x10_not_trained.PNG" />|<img src="oneshotgo/data/result/012_10x10_trained.PNG" />|
 
-## Test
-### 10x10 unseen image (065.bmp)
+### Test
+#### 10x10 unseen image (065.bmp)
 <img src="oneshotgo/data/065_10x10.bmp" width=30%/><img src="oneshotgo/data/065_10x10.png" width=30% />
 
 |Before|After|
 |---|---|
 |<img src="oneshotgo/data/result/065_10x10_unseen_oneshot_without_oneshot.PNG"  />|<img src="oneshotgo/data/result/065_10x10_unseen_oneshot.PNG" />|
 
-### 100x100 unseen image (065.bmp)
+#### 100x100 unseen image (065.bmp)
 <img src="oneshotgo/data/065_100x100.bmp" width=30%/><img src="oneshotgo/data/065_100x100.png" width=30% />
 
 |Before|After|
 |---|---|
 |<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" />|<img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG"  />|
 
-# Conclusion
+## Conclusion
 <img src="oneshotgo/data/res/plot.PNG" />
 
 |Filename|Size(pixel)|Before|After|Effect|
@@ -92,10 +93,10 @@ Using only one image PPO training, I got about three times more effective improv
 
 Also, I can see the reinforcement learning outcomes using PPO worked well even in different size unseen images. I think the strength of reinforcement learning is that it can be applied to more complex and time-consuming data after learning it quickly with a small size data.
 
-# Colab link
+## Colab link
 https://colab.research.google.com/github/decoderkurt/research_project_school_of_ai_2019/blob/master/Research_Project_SchoolofAI.ipynb
 
-# Reference
+## Reference
 OpenAI https://github.com/openai/baselines https://github.com/openai/gym
 
 Proximal Policy Optimization Algorithms
