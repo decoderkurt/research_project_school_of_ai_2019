@@ -59,18 +59,24 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 ### 10x10 image (012.bmp)
 <img src="oneshotgo/data/012.bmp" width=30% /><img src="oneshotgo/data/012.png" width=30%  />
 
-<img src="oneshotgo/data/result/012_10x10_not_trained.PNG" width=40% /><img src="oneshotgo/data/result/012_10x10_trained.PNG" width=40% />
+|Before|After|
+|---|---|
+|<img src="oneshotgo/data/result/012_10x10_not_trained.PNG" width=40% />|<img src="oneshotgo/data/result/012_10x10_trained.PNG" width=40% />|
 
 ## Test
 ### 10x10 unseen image (065.bmp)
 <img src="oneshotgo/data/065_10x10.bmp" width=30% /><img src="oneshotgo/data/065_10x10.png" width=30%  />
 
-<img src="oneshotgo/data/result/065_10x10_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_10x10_unseen_oneshot.PNG" width=41% />
+|Before|After|
+|---|---|
+|<img src="oneshotgo/data/result/065_10x10_unseen_oneshot_without_oneshot.PNG" width=40%  />|<img src="oneshotgo/data/result/065_10x10_unseen_oneshot.PNG" width=41% />|
 
 ### 100x100 unseen image (065.bmp)
 <img src="oneshotgo/data/065_100x100.bmp" width=30% /><img src="oneshotgo/data/065_100x100.png" width=30%  />
 
-<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=40%  /><img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=41% />
+|Before|After|
+|---|---|
+|<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" width=40%  />|<img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG" width=41% />|
 
 # Conclusion
 |Filename|Size(pixel)|Before|After|Effect|
