@@ -39,7 +39,7 @@ Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such 
 ## keras-rl, tensorforce, ray, SLM
 keras-rl has not yet implemented a PPO. In case of tensorforce, it was unstable because it did not fit my development environment. Ray does not yet support for Windows. In the case of SLM, the dependency of the ray makes it not support for Windows. I installed and tested Linux in Windows using WSL, but due to the instability of WSL, the system was failed while apt-get update. OpenAI was my best choice.
 
-# Enviroment
+# Experiment
 ## Install
 ```
 git clone https://github.com/decoderkurt/research_project_school_of_ai_2019.git
