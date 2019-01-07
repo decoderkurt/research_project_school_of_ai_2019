@@ -6,7 +6,7 @@ In this research project, to solve real world problems with machine learning, I 
 
 The basis for judgment must be clear in the biomedical field, so I decided to use image data among various types for the reason of being visualized intuitively.
 
-Using just one labeled image data for training, I wanted to categorize a lot of unseen data based on it by the basic concept of one-shot learning through reinforcement learning.
+Using just one labeled image data for training, I wanted to categorize a lot of unseen data based on it by the basic concept of one shot learning through reinforcement learning.
 
 In this project, I redefined the one shot image segmentation problem as a reinforcement learning and solved it using PPO. I found that there was actually a dramatic performance.
 
