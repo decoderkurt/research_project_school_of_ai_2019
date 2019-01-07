@@ -1,6 +1,6 @@
 [<img src="oneshotgo/data/res/logo.png" width=70%/>](https://www.theschool.ai/school-of-ai-fellowship/)
-One shot learning using PPO
-===========================
+
+# One shot learning using PPO
 
 # Introduction
 
