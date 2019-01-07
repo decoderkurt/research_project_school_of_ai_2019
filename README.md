@@ -1,6 +1,6 @@
 [<img src="oneshotgo/data/res/logo.png" width=70%/>](https://www.theschool.ai/school-of-ai-fellowship/)
 
-# One shot learning using PPO
+# One shot learning using Proximal Policy Optimization 
 
 ## Introduction
 In this research project, to solve real world problems with machine learning, I noted that there is a limit to the traditional Deep Learning application, which is highly dependent on existing datasets because it is still difficult to obtain enough labled data.
@@ -81,7 +81,7 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 |<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" />|<img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG"  />|
 
 ## Conclusion
-|Training|Test(012_10x10)|Test(065_10x10)|
+|Training(012_10x10)|Test(012_10x10)|Test(065_10x10)|
 |---|---|---|
 |<img src="oneshotgo/data/res/plot.PNG" />|<img src="oneshotgo/data/res/plot2.PNG" />|<img src="oneshotgo/data/res/plot3.PNG" />|
 
