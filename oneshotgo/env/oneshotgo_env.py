@@ -27,8 +27,11 @@ from os.path import abspath, join, dirname
 012Ori.bmp : Blood cell 300x300 Image (full size)
 012Ori.png : Blood cell 300x300 mask (full size)
 
-065.bmp : Blood cell 100x100 Image
-065.png : Blood cell 100x100 mask
+065_10x10.bmp : Blood cell 10x10 Image
+065_10x10.png : Blood cell 10x10 mask
+
+065_100x100.bmp : Blood cell 100x100 Image
+065_100x100.png : Blood cell 100x100 mask
 
 065Ori.bmp : Blood cell 300x300 Image (full size)
 065Ori.png : Blood cell 300x300 mask (full size)
