@@ -2,8 +2,6 @@
 
 # One shot learning using PPO
 
-# Introduction
-
 In this research project, to solve real world problems with machine learning, I noted that there is a limit to the traditional Deep Learning application, which is highly dependent on existing datasets because it is still difficult to obtain enough labled data.
 
 The basis for judgment must be clear in the biomedical field, so I decided to use image data among various types for the reason of being visualized intuitively.
