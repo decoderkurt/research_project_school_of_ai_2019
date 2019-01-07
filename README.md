@@ -81,7 +81,9 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 |<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" />|<img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG"  />|
 
 ## Conclusion
-<img src="oneshotgo/data/res/plot.PNG" />
+|Training|Test|
+|---|---|
+|<img src="oneshotgo/data/res/plot.PNG" />|<img src="oneshotgo/data/res/plot2.PNG" />|
 
 |Filename|Size(pixel)|Before|After|Effect|
 |---|---|---|---|---|
