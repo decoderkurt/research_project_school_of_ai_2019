@@ -90,7 +90,6 @@ https://colab.research.google.com/github/decoderkurt/research_project_school_of_
 OpenAI
 
 https://github.com/openai/baselines
-
 https://github.com/openai/gym
 
 Proximal Policy Optimization Algorithms
