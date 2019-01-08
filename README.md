@@ -13,11 +13,11 @@ Using just one labeled image data for training, I wanted to categorize a lot of 
 
 In this project, I redefined the one shot image segmentation problem as a reinforcement learning and solved it using PPO. I found that there was actually a dramatic performance.
 
-
-## Reinforcement learning
 <p align="center">
 <img src="oneshotgo/data/res/un.png" width=70%/>
 </p>
+
+## Reinforcement learning
 I defined the human's ability to read images as a policy of reinforcement learning, and an agent's prediction of this as an action. I also considered inverse reinforcement learning and GAIL. But, in this case, the reward function is pretty clear and the policy is more important, I descided to use PPO that also does not need the MDP(Markov Decision Process).
 
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
@@ -32,6 +32,10 @@ reward = ( min(count[0], self.mask_zero_count) / max(count[0], self.mask_zero_co
 The key to this reward function is using the min max function so that the number of zeros is the most important and the correctness, whether large or small, is equally affected. Given the nature of biomedical images, background and object classification is the most important, and slide images are mostly colored, so the better the background is blown away, the higher the reward.
 
 I also considered using MSE and SSIM, but the former was not appropriate due to high variance and the latter was always highly similarity.
+
+<p align="center">
+<img src="oneshotgo/data/res/flow.png" width=100%/>
+</p>
 
 ### Action
 The intention was to distinguish the background from the cell boundary and the nucleus at once with the black, grey and white. To do this, two separate uint8 between 0 and 255 are required for action_space. There is still a problem where Tuple action_space is not implemented yet in PPO of OpenAI, and in the case of Box, a bug with an action value of between -1.0 and 1.0 was found as float, regardless of defined the action space. I eventually used only one discrete integer.
