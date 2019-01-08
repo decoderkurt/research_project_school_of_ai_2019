@@ -98,6 +98,7 @@ Using only one image PPO training, I got about three times more effective improv
 Also, I can see the reinforcement learning outcomes using PPO worked well even in different size unseen images. I think the strength of reinforcement learning is that it can be applied to more complex and time-consuming data after learning it quickly with a small size data.
 
 ## Colab link
+[![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/decoderkurt/research_project_school_of_ai_2019/blob/master/Research_Project_SchoolofAI.ipynb) 
 https://colab.research.google.com/github/decoderkurt/research_project_school_of_ai_2019/blob/master/Research_Project_SchoolofAI.ipynb
 
 ## Reference
