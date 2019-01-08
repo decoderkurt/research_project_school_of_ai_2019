@@ -1,7 +1,7 @@
 [<img src="oneshotgo/data/res/logo.png" width=70%/>](https://www.theschool.ai/school-of-ai-fellowship/)
 
 # One shot learning using Proximal Policy Optimization 
-By Kurt Koo ([twitter](https://twitter.com/kurt_koo) [linkedin](https://www.linkedin.com/in/kurtkoo/))
+By **Kurt Koo** [![linkedin](oneshotgo/data/res/linkedin.png)](https://www.linkedin.com/in/kurtkoo)  [![twitter](oneshotgo/data/res/twitter.png)](https://twitter.com/kurt_koo) [![facebook](oneshotgo/data/res/fb.png)](https://www.facebook.com/vcmlrl)
 
 ## Introduction
 In this research project, to solve real world problems with machine learning, I noted that there is a limit to the traditional Deep Learning application, which is highly dependent on existing datasets because it is still difficult to obtain enough labled data.
