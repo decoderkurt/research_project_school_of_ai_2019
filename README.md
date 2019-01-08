@@ -18,7 +18,7 @@ In this project, I redefined the one shot image segmentation problem as a reinfo
 <p align="center">
 <img src="oneshotgo/data/res/un.png" width=70%/>
 </p>
-I defined the human's ability to read images as a policy of reinforcement learning, and an agent's prediction of this as an action. I also considered inverse reinforcement learning and GAIL. But, in this case, the reward function is pretty clear and the policy is more important,I descided to use PPO that also does not need the MDP(Markov Decision Process).
+I defined the human's ability to read images as a policy of reinforcement learning, and an agent's prediction of this as an action. I also considered inverse reinforcement learning and GAIL. But, in this case, the reward function is pretty clear and the policy is more important, I descided to use PPO that also does not need the MDP(Markov Decision Process).
 
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
 
