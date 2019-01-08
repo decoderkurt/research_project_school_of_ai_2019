@@ -87,18 +87,18 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 |<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" />|<img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG"  />|
 
 ## Conclusion
-||Training||Test||
+||Training|Test1|Test2|Test3|
 |---|---|---|---|---|
 |File|012.bmp|012.bmp|065.bmp|065.bmp|
 |Data Size|10x10|10x10|10x10|100x100|
-|Timesteps||1e6|||
+|Timesteps|1e6|1e6|1e6|1e6|
 |Result|<img src="oneshotgo/data/res/plot.PNG" />|<img src="oneshotgo/data/res/plot2.PNG" />|<img src="oneshotgo/data/res/plot3.PNG" />|<img src="oneshotgo/data/res/plot4.PNG" />|
 
-|Filename|Size(pixel)|Before|After|Effect|
-|---|---|---|---|---|
-|012.bmp|10x10|9.05|64.3|710%↑|
-|065.bmp|10x10|22.3|77.6|347%↑|
-|065.bmp|100x100|17.9|61.3|342%↑|
+|Test|Filename|Size(pixel)|Before|After|Effect|
+|---|---|---|---|---|---|
+|Test1|012.bmp|10x10|9.05|64.3|710%↑|
+|Test2|065.bmp|10x10|22.3|77.6|347%↑|
+|Test3|065.bmp|100x100|17.9|61.3|342%↑|
 
 Using only one image PPO training, I got about three times more effective improvement than if it did not apply. Through this research project, I saw the possibility of solving real world problems using reinforcement learning where traditional deep learning could not be applied due to small data.
 
