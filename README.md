@@ -102,6 +102,6 @@ Also, I can see the reinforcement learning outcomes using PPO worked well even i
 https://colab.research.google.com/github/decoderkurt/research_project_school_of_ai_2019/blob/master/Research_Project_SchoolofAI.ipynb
 
 ## Reference
-[1]OpenAI https://github.com/openai/baselines https://github.com/openai/gym
-[2]Proximal Policy Optimization Algorithms https://arxiv.org/abs/1707.06347
+[1]OpenAI https://github.com/openai/baselines https://github.com/openai/gym <br>
+[2]Proximal Policy Optimization Algorithms https://arxiv.org/abs/1707.06347 <br>
 [3]Dataset https://github.com/zxaoyou/segmentation_WBC
