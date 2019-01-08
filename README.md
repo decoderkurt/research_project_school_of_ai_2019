@@ -34,7 +34,7 @@ The key to this reward function is using the min max function so that the number
 I also considered using MSE and SSIM, but the former was not appropriate due to high variance and the latter was always highly similarity.
 
 <p align="center">
-<img src="oneshotgo/data/res/flow.png" width=100%/>
+<img src="oneshotgo/data/res/overall.png" width=100%/>
 </p>
 
 ### Action
@@ -87,10 +87,12 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 |<img src="oneshotgo/data/result/065_100x100_unseen_oneshot_without_oneshot.PNG" />|<img src="oneshotgo/data/result/065_100x100_unseen_oneshot.PNG"  />|
 
 ## Conclusion
-||Training(012_10x10)|Test(012_10x10)|Test(065_10x10)|
-|---|---|---|---|
-|Result|<img src="oneshotgo/data/res/plot.PNG" />|<img src="oneshotgo/data/res/plot2.PNG" />|<img src="oneshotgo/data/res/plot3.PNG" />|
-|Timesteps|1e6|1e6|1e6|
+||Training||Test||
+|---|---|---|---|---|
+|File|012.bmp|012.bmp|065.bmp|065.bmp|
+|Data Size|10x10|10x10|10x10|100x100|
+|Timesteps||1e6|||
+|Result|<img src="oneshotgo/data/res/plot.PNG" />|<img src="oneshotgo/data/res/plot2.PNG" />|<img src="oneshotgo/data/res/plot3.PNG" />|<img src="oneshotgo/data/res/plot4.PNG" />|
 
 |Filename|Size(pixel)|Before|After|Effect|
 |---|---|---|---|---|
