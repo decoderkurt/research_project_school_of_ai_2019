@@ -1,7 +1,7 @@
 [<img src="oneshotgo/data/res/logo.png" width=70%/>](https://www.theschool.ai/school-of-ai-fellowship/)
 
 # One shot learning using Proximal Policy Optimization 
-**Kurt Koo** callmekoo@gmail.com  <br> *Research Fellow, School of AI*  [![linkedin](oneshotgo/data/res/linkedin.png)](https://www.linkedin.com/in/kurtkoo)   [![twitter](oneshotgo/data/res/twitter.png)](https://twitter.com/kurt_koo)  [![facebook](oneshotgo/data/res/fb.png)](https://www.facebook.com/vcmlrl)
+**Kurt Koo** callmekoo@gmail.com [![linkedin](oneshotgo/data/res/linkedin.png)](https://www.linkedin.com/in/kurtkoo)   [![twitter](oneshotgo/data/res/twitter.png)](https://twitter.com/kurt_koo)  [![facebook](oneshotgo/data/res/fb.png)](https://www.facebook.com/vcmlrl) <br> *Research Fellow, School of AI*  
 
 
 ## Introduction
