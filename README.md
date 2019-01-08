@@ -23,28 +23,28 @@ I defined the human's ability to read images as a policy of reinforcement learni
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
 
 ### Reward Function
-The agent reads the original image and converts it into a two-dimensional array as large as the image size, and performs a black-white calibration by comparing the pixel value with the predicted value. I designed the reward function with the correct response rate compared to the actual labled mask. 
+An agent reads the original image and converts it into a two-dimensional array at the size of the image, and performs a black-white calibration by comparing the pixel value with the predicted value. I designed the reward function with the correct response rate compared to the actual labled mask. 
 
-In other words, the agent produces a mask every time through repeated actions, which will receive a higher reward if they are similar to the correct answer.
+In other words, the agent produces a mask every time through repeated actions, which will receive a higher reward if they are similar to the correct answer. A trained model discriminates the agent with this reward as a score.
 ```
 reward = ( min(count[0], self.mask_zero_count) / max(count[0], self.mask_zero_count)) ** 2
 ```
-The key to this reward function is using the min max function so that the number of zeros is the most important and the correctness, whether large or small, is equally affected. Given the nature of biomedical images, background and object classification is the most important, and slide images are mostly colored, so the better the background is blown away, the higher the reward.
+The key to this reward function is using the min max function to keep the prediction is equally affected. Given the nature of biomedical images, background and object classification is very important. The slide images are usually colored, so the better the background is blown away, the higher the reward.
 
-I also considered using MSE and SSIM, but the former was not appropriate due to high variance and the latter was always highly similarity.
+I also considered using MSE(mean square error) and SSIM(structural similarity), but the former was not appropriate due to high variance and the latter too high similarity.
 
 <p align="center">
 <img src="oneshotgo/data/res/overall.png" width=100%/>
 </p>
 
 ### Action
-The intention was to distinguish the background from the cell boundary and the nucleus at once with the black, grey and white. To do this, two separate uint8 between 0 and 255 are required for action_space. There is still a problem where Tuple action_space is not implemented yet in PPO of OpenAI, and in the case of Box, a bug with an action value of between -1.0 and 1.0 was found as float, regardless of defined the action space. I eventually used only one discrete integer.
+My intention was to distinguish the background from the cell boundary and the nucleus at once with the black, grey and white colors. To do this, two Discrete uint8 between 0 and 255 are required for the action_space. There is still a problem where Tuple action_space is not implemented yet, and in the case of Box, a bug with an action value was found. A float value between -1.0 and 1.0 appeared which is out of the defined action_space bound. I eventually used only one discrete integer for black and white color, abandoned on the grey.
 
 ### action_space, observation_space
-Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such as Arati and seem to be well implemented. It works well  with observation_space, not action_space. Until the fix, it would be better to be careful if you apply PPO of gym in a unique way.
+Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such as Arati and seem to work well. It has no problems with observation_space, not action_space. Until fixed, it would be better to be careful if you apply PPO of gym in a your own way.
 
 ### keras-rl, tensorforce, ray, SLM
-keras-rl has not yet implemented a PPO. In case of tensorforce, it was unstable because it did not fit my development environment. Ray does not yet support for Windows. In the case of SLM, the dependency of the ray makes it not support for Windows. I installed and tested Linux in Windows using WSL, but due to the instability of WSL, the system was failed while apt-get update. OpenAI was my best choice.
+keras-rl has not yet implemented PPO. In case of tensorforce, it was unstable because it did not fit my development environment. Ray does not yet support for Windows. In the case of SLM, the dependency of the Ray makes it not support for Windows. I installed and tested Linux in Windows using WSL, but due to the instability of WSL, the system was failed while apt-get update. OpenAI was my best choice.
 
 ## Experiment
 ### Install
@@ -100,9 +100,9 @@ python -m baselines.run --alg=ppo2 --env=OneShotGo-v0 --load_path="OneShotGo10M"
 |Test2|065.bmp|10x10|22.3|77.6|347%↑|
 |Test3|065.bmp|100x100|17.9|61.3|342%↑|
 
-Using only one image PPO training, I got about three times more effective improvement than if it did not apply. Through this research project, I saw the possibility of solving real world problems using reinforcement learning where traditional deep learning could not be applied due to small data.
+Using only one image training with PPO, I got about three times more effective improvement than if it did not apply. Through this research project, I saw the possibility of solving real world problems using reinforcement learning where traditional deep learning could not be applied due to lack of dataset.
 
-Also, I can see the reinforcement learning outcomes using PPO worked well even in different size unseen images. I think the strength of reinforcement learning is that it can be applied to more complex and time-consuming data after learning it quickly with a small size data.
+Also, I can see PPO worked well even in different size unseen images. I think the strength of reinforcement learning is that it can be applied to more complex and time-consuming data after learning it quickly with a small sized.
 
 ## Colab link
 [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/decoderkurt/research_project_school_of_ai_2019/blob/master/Research_Project_SchoolofAI.ipynb) 
