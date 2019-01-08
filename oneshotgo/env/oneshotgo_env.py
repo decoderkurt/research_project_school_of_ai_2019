@@ -41,6 +41,7 @@ TRAIN_MASK = "012.png"
 
 class OneShotGoEnv(gym.Env):
     def __init__(self):
+        print("IMAGE: ", TRAIN_IMAGE, "MASK: ", TRAIN_MASK)
         seed()
         self.seed()
 
@@ -97,7 +98,6 @@ class OneShotGoEnv(gym.Env):
         return self.observation, reward, done, {"mask_zero_count": self.mask_zero_count, "guesses": self.guess_count}
 
     def reset(self):
-		print("IMAGE: ", TRAIN_IMAGE, "MASK: ", TRAIN_MASK)
         self.guess_count = 0
         self.observation = 0
         return self.observation
