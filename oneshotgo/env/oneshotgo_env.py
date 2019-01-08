@@ -41,7 +41,9 @@ TRAIN_MASK = "012.png"
 
 class OneShotGoEnv(gym.Env):
     def __init__(self):
-        print("IMAGE: ", TRAIN_IMAGE, "MASK: ", TRAIN_MASK)
+        print("--------------------------------------")
+        print("| IMAGE: ", TRAIN_IMAGE, "MASK: ", TRAIN_MASK, "    |")
+        print("--------------------------------------")
         seed()
         self.seed()
 
