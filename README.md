@@ -34,7 +34,7 @@ The key to this reward function is using the min max function so that the number
 I also considered using MSE and SSIM, but the former was not appropriate due to high variance and the latter was always highly similarity.
 
 ### Action
-The intention was to distinguish the background from the cell boundary and the nucleus at the same time with the black, grey and white. To do this, two separate uint8 between 0 and 255 are required for action_space. There is still a problem where Tuple action_space is not implemented yet in PPO of OpenAI, and in the case of Box, a bug with an action value of between -1.0 and 1.0 was found as float, regardless of defined the action space. I eventually used only one discrete integer.
+The intention was to distinguish the background from the cell boundary and the nucleus at once with the black, grey and white. To do this, two separate uint8 between 0 and 255 are required for action_space. There is still a problem where Tuple action_space is not implemented yet in PPO of OpenAI, and in the case of Box, a bug with an action value of between -1.0 and 1.0 was found as float, regardless of defined the action space. I eventually used only one discrete integer.
 
 ### action_space, observation_space
 Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such as Arati and seem to be well implemented. It works well  with observation_space, not action_space. Until the fix, it would be better to be careful if you apply PPO of gym in a unique way.
