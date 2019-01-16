@@ -22,7 +22,7 @@ I defined the human's ability to read images as a policy of reinforcement learni
 
 I used PPO of OpenAI gym, and implemented custom env for this project. I felt a similarity with GO in that an agent creates a grayscale mask from the original RGB image, so named it as "OneShotGo".
 
-### Reward Function
+### *Reward Function*
 An agent reads the original image and converts it into a two-dimensional array at the size of the image, and performs a black-white calibration by comparing the pixel value with the predicted value. I designed the reward function with the correct response rate compared to the actual labled mask. 
 
 In other words, the agent produces a mask every time through repeated actions, which will receive a higher reward if they are similar to the correct answer. A trained model discriminates the agent with this reward as a score.
@@ -37,13 +37,13 @@ I also considered using MSE(mean square error) and SSIM(structural similarity), 
 <img src="oneshotgo/data/res/overall.png" width=100%/>
 </p>
 
-### Action
+### *Action*
 My intention was to distinguish the background from the cell boundary and the nucleus at once with the black, grey and white colors. To do this, two Discrete uint8 between 0 and 255 are required for the action_space. There is still a problem where Tuple action_space is not implemented yet, and in the case of Box, a bug with an action value was found. A float value between -1.0 and 1.0 appeared which is out of the defined action_space bound. I eventually used only one discrete integer for black and white color, abandoned on the grey.
 
-### action_space, observation_space
+### *action_space, observation_space*
 Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such as Arati and seem to work well. It has no problems with observation_space, not action_space. Until fixed, it would be better to be careful if you apply PPO of gym in a your own way.
 
-### keras-rl, tensorforce, ray, SLM
+### keras-rl, tensorforce, Ray, SLM
 keras-rl has not yet implemented PPO. In case of tensorforce, it was unstable because it did not fit my development environment. Ray does not yet support for Windows. In the case of SLM, the dependency of the Ray makes it not support for Windows. I installed and tested Linux in Windows using WSL, but due to the instability of WSL, the system was failed while apt-get update. OpenAI was my best choice.
 
 ## Experiment
