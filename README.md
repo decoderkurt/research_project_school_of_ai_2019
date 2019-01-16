@@ -47,6 +47,20 @@ Discrete or -1.0 to 1.0 Box action_space, are already widely used in games such 
 keras-rl has not yet implemented PPO. In case of tensorforce, it was unstable because it did not fit my development environment. Ray does not yet support for Windows. In the case of SLM, the dependency of the Ray makes it not support for Windows. I installed and tested Linux in Windows using WSL, but due to the instability of WSL, the system was failed while apt-get update. OpenAI was my best choice.
 
 ## Experiment
+### Requirements
+```
+pip install gym
+pip install tensorflow
+pip install opencv-python
+pip install joblib
+pip install pillow
+```
+
+If you are using ubuntu, you will need to run theses (you don't need to run theses on Windows)
+```
+sudo apt-get install libsm6
+sudo apt-get install libxrender1
+```
 ### Install
 ```
 git clone https://github.com/decoderkurt/research_project_school_of_ai_2019.git
